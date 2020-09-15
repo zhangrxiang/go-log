@@ -8,7 +8,7 @@ import (
 )
 
 const (
-	DefaultFileName         = "log-%Y-%m-%d.log"
+	DefaultFileName         = "logs/log-%Y-%m-%d.log"
 	DefaultFileMaxAge       = time.Hour * 24 * 30
 	DefaultFileRotationTime = time.Hour * 24
 )
