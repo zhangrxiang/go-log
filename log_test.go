@@ -5,8 +5,22 @@ import (
 	"testing"
 )
 
-func TestName(t *testing.T) {
-	log.Default()
+func TestDefault(t *testing.T) {
+	log.Info("default")
+}
+
+func TestLogLoad(t *testing.T) {
+	log.LoadLog(log.ConsoleLog)
+	log.Info("hello world")
+}
+
+func TestLogLoadMore(t *testing.T) {
+	log.LoadLog(log.ConsoleLog, log.SocketLog, log.FileLog)
+	log.Info("hello")
+}
+
+func TestLoad(t *testing.T) {
+	log.LoadConsoleLog()
 	log.LoadFileLog()
 	log.LoadWebSocketLog()
 	log.Info("Info")

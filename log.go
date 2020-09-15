@@ -13,9 +13,26 @@ var (
 
 const (
 	DefaultLocalTimeDateFormat = "2006-01-02 15:04:05"
+
+	ConsoleLog = iota
+	FileLog
+	SocketLog
 )
 
-func Default() {
+func LoadLog(codes ...int) {
+	for _, code := range codes {
+		switch code {
+		case FileLog:
+			LoadFileLog()
+		case ConsoleLog:
+			LoadConsoleLog()
+		case SocketLog:
+			LoadWebSocketLog()
+		}
+	}
+}
+
+func LoadConsoleLog() {
 	logger.Formatter = &logrus.TextFormatter{
 		DisableTimestamp: false,
 		FullTimestamp:    true,
