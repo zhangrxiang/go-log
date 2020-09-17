@@ -66,10 +66,14 @@ func Socket(t string, args interface{}) {
 	}
 }
 
-func (w *webSocket) Read(ws *neffos.Server) {
+func Read(ws *neffos.Server) {
+	if socket == nil {
+		return
+	}
+
 	for {
 		select {
-		case content := <-w.Content:
+		case content := <-socket.Content:
 			ws.Broadcast(nil, neffos.Message{
 				Body:     content,
 				IsNative: true,
