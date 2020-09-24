@@ -1,4 +1,4 @@
-module github.com/zhangrxiang/go-log
+module github.com/zing-dev/go-log
 
 go 1.14
 
