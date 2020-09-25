@@ -1,7 +1,7 @@
 package log_test
 
 import (
-	"github.com/zhangrxiang/go-log"
+	"github.com/zing-dev/go-log"
 	"testing"
 )
 
